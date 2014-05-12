@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  http://www.springframework.org/schema/beans/spring-beans-4.0.xsd  
+	http://www.springframework.org/schema/context  http://www.springframework.org/schema/context/spring-context-4.0.xsd  
+	http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+	
+	 <context:annotation-config />	
+
+	<context:component-scan base-package="com.danielme.blog" />
+	    
+	<task:annotation-driven />
+	
+  	<context:property-placeholder location="classpath:tasks.properties"/>
+  	
+  	<!-- <bean id="scheduledTasks" class="com.danielme.blog.spring.scheduled.ScheduledTasks" />
+ 
+     <task:scheduled-tasks>
+        <task:scheduled ref="scheduledTasks" method="task1" initial-delay="${task1.initialDelay}" fixed-delay="${task1.fixedDelay}"/>
+        <task:scheduled ref="scheduledTasks" method="task2" cron="${task2.cron}"/>
+    </task:scheduled-tasks>-->
+		
+</beans>
